@@ -1,0 +1,6 @@
+name: MincraftPlug2
+main: com.mincraftplug2.Main
+version: 1.0
+api-version: 1.18
+depend: [MiniGameWorld]
+
