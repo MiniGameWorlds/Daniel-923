@@ -18,3 +18,24 @@
 
 # 맵 가이드
 - 자유도 
+
+# config 가이드
+- 대기장소, 위치 정하기
+```
+custom-data: 
+    redLocation:
+      ==: org.bukkit.Location
+      world: world
+      x: 71.0
+      y: 67.0
+      z: 6.0
+      pitch: 0.0
+      yaw: 0.0
+    blueLocation:
+      ==: org.bukkit.Location
+      world: world
+      x: 87.0
+      y: 70.0
+      z: -6.0
+      pitch: 0.0
+      yaw: 0.0
