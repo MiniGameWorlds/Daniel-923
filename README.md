@@ -15,3 +15,6 @@
 
 # 필요 플러그인
 - [MiniGameWorld 다운](https://github.com/MiniGameWorlds/MiniGameWorld)
+
+# 맵 가이드
+- 자유도 
