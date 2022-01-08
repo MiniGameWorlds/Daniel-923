@@ -21,6 +21,8 @@
 
 # config 가이드
 - 대기장소, 위치 정하기
+- redLocation: 레드팀이 게임 시작시 텔레포트되는 위치
+- blueLocation: 팀이 게임 시작시 텔레포트되는 위치
 ```
 custom-data: 
     redLocation:
