@@ -5,7 +5,8 @@
 
 
 # 다운로드 방법
-- 우측 Release 
+- 우측 Releases 클릭 후 Aseets 아래에 있는 DodgeBall-1.0.0.jar파일을 다운로드 받으시면 됩니다. 
+- 이후 다운로드 된 DodgeBall-1.0.0.jar파일은 plugin폴더에 넣으시면 됩니다.
 
 
 # 룰
