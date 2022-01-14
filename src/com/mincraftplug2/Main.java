@@ -12,7 +12,8 @@ public class Main extends JavaPlugin {
 		//미니게임 버전
 		MiniGameWorld mw = MiniGameWorld.create("0.3.2");
 		mw.registerMiniGame(new Dodgeball());
-		//mw.registerMiniGame(new Soloplay());
+		mw.registerMiniGame(new Findglowstone());
+		mw.registerMiniGame(new RoomEscape());
 	}
 
 	@Override
