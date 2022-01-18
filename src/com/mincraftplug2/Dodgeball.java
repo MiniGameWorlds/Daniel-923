@@ -33,7 +33,6 @@ public class Dodgeball extends TeamBattleMiniGame {
 	public Dodgeball() {
 		super("Dodgeball", 2, 30, 3);
 
-		getSetting().setPassUndetectableEvent(true);
 		getSetting().setIcon(Material.FIRE_CHARGE);
 	}
 
@@ -105,7 +104,6 @@ public class Dodgeball extends TeamBattleMiniGame {
 					plusTeamScore(p, 1);
 					hitEntity.sendMessage("You hit...");
 					//setLive((Player) hitEntity, false);
-
 				}
 			}
 			//ProjectileLaunchEvent: 발사체가 발사될 때 호출됩니다.
@@ -113,20 +111,15 @@ public class Dodgeball extends TeamBattleMiniGame {
 			ProjectileLaunchEvent e = (ProjectileLaunchEvent) event;
 
 			Projectile proj = e.getEntity();
-
-			if (proj.getShooter() instanceof Player) {
-				Player p = (Player) proj.getShooter();
-				p.setCooldown(Material.FIRE_CHARGE, 20 * 4);
-				proj.setVelocity(p.getLocation().getDirection());
-				proj.setGravity(false);
-
-			}
+			Player p = (Player) proj.getShooter();
+			p.setCooldown(Material.FIRE_CHARGE, 20 * 4);
+			
 			//EntityDamageByEntityEvent: 엔터티가 엔터티에 의해 손상되었을 때 호출됩니다.
 		} else if (event instanceof EntityDamageByEntityEvent) {
 			EntityDamageByEntityEvent e = (EntityDamageByEntityEvent) event;
 			if (e.getEntityType() == EntityType.FIREBALL) {
 
-				//잡았을 때 점수 3점 추가/좌클릭 했을 때 반사
+				//잡았을 때 점수 1점 추가/좌클릭 했을 때 반사
 				if (e.getDamager() instanceof Player) {
 					Player p = (Player) e.getDamager();
 					plusTeamScore(p, 1);
@@ -153,9 +146,7 @@ public class Dodgeball extends TeamBattleMiniGame {
 					fireball.setYield(0);
 
 					e.setCancelled(true);
-
 				}
-
 			}
 
 		}
@@ -167,8 +158,7 @@ public class Dodgeball extends TeamBattleMiniGame {
 		List<String> tutorial = new ArrayList<>();
 		tutorial.add("공격자: 한 명이 맞출 시 1점 추가");
 		tutorial.add("수비자: 공을 잡으면 1점 추가");
-		tutorial.add("제한 시간 내에 한 팀의 팀원이 모두 아웃되면 게임 종료 ");
-		tutorial.add("만약 제한 시간 내에 안 끝날 시 점수가 높은 팀이 승");
+		tutorial.add("경기가 종료후 점수가 높은 팀이 승");
 
 		return tutorial;
 	}
